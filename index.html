@@ -15,7 +15,8 @@
 				alert(source);
 				if (img.clientWidth < 200) {
 					alert(img.clientWidth);
-					randomBackground()
+					document.body.style.backgroundImage = "url(source)";
+					//randomBackground()
 				} else {
 					document.body.style.backgroundImage = "url(source)";
 				}
