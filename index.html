@@ -5,15 +5,13 @@
 			function randomBackground() {
 				var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789';
 				var text = '';
-				for (var i =0; i < 5; i++) {
+				for (var i = 0; i < 5; i++) {
 					var rnum = Math.floor(Math.random() * chars.length);
 					text += chars.substring(rnum, rnum+1)
 				}
-   				var source = 'http://i.imgur.com/' + text + '.jpg';
-				img = document.createElement("img");
-				img.src = source;
-				alert(img.src);
-				document.body.style.backgroundImage = document.getElementsByName("img");
+   				var source =  "url('http://i.imgur.com/' + text + '.jpg')";
+				alert(img.source);
+				document.body.style.backgroundImage = source;
 			}		
 			randomBackground();
 			
