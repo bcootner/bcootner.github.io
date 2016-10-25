@@ -2,7 +2,19 @@
 <html>
 	<body>
 		<script>
-			document.body.style.backgroundImage = "url('https://i.redd.it/bogmiajkygtx.jpg')";
+			function randomString() {
+				var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789';
+				var text = '';
+				for (var i =0; i < 5; i++) {
+					var rnum = Math.floor(Math.random() * chars.length);
+					text += chars.substring(rnum, rnum+1)
+				}
+   				var source = 'http://i.imgur.com/' + text + '.jpg';
+    				document.body.style.backgroundImage = "url('source')";
+				alert(source);
+			}
+			randomString();
+			
 		</script>
 		<h1>Ben Cootner</h1>
 			<img src="https://scontent-atl3-1.xx.fbcdn.net/t31.0-8/1400465_1592993854246560_9162983719806522701_o.jpg" style="float:right; width:150px; margin-right:150px">
