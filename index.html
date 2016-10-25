@@ -2,7 +2,7 @@
 <html>
 	<body>
 		<script>
-			function randomString() {
+			function randomBackground() {
 				var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789';
 				var text = '';
 				for (var i =0; i < 5; i++) {
@@ -10,10 +10,22 @@
 					text += chars.substring(rnum, rnum+1)
 				}
    				var source = 'http://i.imgur.com/' + text + '.jpg';
-    				document.body.style.backgroundImage = "url('source')";
+				checkSize();
+    				
+
+				img = document.createElement('img');
+				img.src = source
 				alert(source);
-			}
-			randomString();
+				
+				if (img.clientWidth < 500) {
+				alert(img.size);
+				  randomBackground()
+				} else {
+					document.body.style.backgroundImage = "url(source)";
+				}
+			
+			}		
+			randomBackground();
 			
 		</script>
 		<h1>Ben Cootner</h1>
