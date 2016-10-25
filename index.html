@@ -10,16 +10,12 @@
 					text += chars.substring(rnum, rnum+1)
 				}
    				var source = 'http://i.imgur.com/' + text + '.jpg';
-				checkSize();
-    				
-
 				img = document.createElement('img');
 				img.src = source
 				alert(source);
-				
 				if (img.clientWidth < 500) {
-				alert(img.size);
-				  randomBackground()
+					alert(img.size);
+					randomBackground()
 				} else {
 					document.body.style.backgroundImage = "url(source)";
 				}
