@@ -13,13 +13,8 @@
 				img = document.createElement('img');
 				img.src = source
 				alert(source);
-				if (img.clientWidth < 200) {
-					alert(img.clientWidth);
-					document.body.style.backgroundImage = "url(source)";
-					//randomBackground()
-				} else {
-					document.body.style.backgroundImage = "url(source)";
-				}
+				document.body.style.backgroundImage = "url(source)";
+				alert(source.naturalWidth);
 			
 			}		
 			randomBackground();
