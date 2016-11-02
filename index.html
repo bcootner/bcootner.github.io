@@ -12,9 +12,11 @@
 				hrs = (hrs < 10) ? "0" + hrs : hrs; 
 				mins = (mins < 10) ? "0" + mins : mins;
 				secs = (secs < 10) ? "0" + secs : secs;
+				
 				document.getElementById('currentTime').innerHTML = hrs + ":" + mins + ":" + secs;			
 				document.body.style.backgroundColor = "#" + hrs + mins + secs;
-				t = setTimeout(function() {
+				alert(hrs + ":" + mins + ":" + secs);
+				t = setTimeout(function () {
 					getTime()
 				}, 500);
 			}
