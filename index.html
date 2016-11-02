@@ -14,9 +14,7 @@
 				alert("#" + h + m + s);
 				document.getElementById('currentTime').innerHTML = h + ":" + m + ":" + s;			
 				document.body.style.backgroundColor = "#" + h + m + s;
-				t = setTimeout(function () {
-					getTime()
-				}, 500);
+				setTimeout(getTime, 500);
 			}
 			getTime();
 			
