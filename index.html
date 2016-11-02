@@ -5,13 +5,13 @@
 			
 			function getTime() {
 				var today = new Date();
-				hrs = today.getHours();
-				mins = today.getMinutes();
-				secs = today.getSeconds();
+				var hrs = today.getHours();
+				var mins = today.getMinutes();
+				var secs = today.getSeconds();
 				
 				hrs = (hrs < 10) ? "0" + hrs : hrs; 
 				mins = (mins < 10) ? "0" + mins : mins;
-				sec = (secs < 10) ? "0" + secs : secs;
+				secs = (secs < 10) ? "0" + secs : secs;
 				document.getElementById('currentTime').innerHTML = hrs + ":" + mins + ":" + secs;			
 				document.body.style.backgroundColor = "#" + hrs + mins + secs;
 				t = setTimeout(function() {
