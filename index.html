@@ -3,7 +3,6 @@
 	<body>
 		<script language="JavaScript">
 			function getTime() {
-				alert("11");
 				var today = new Date();
 				var hrs = today.getHours();
 				var mins = today.getMinutes();
@@ -12,14 +11,13 @@
 				var h = (hrs < 10) ? "0" + hrs.toString() : hrs.toString(); 
 				var m = (mins < 10) ? "0" + mins.toString() : mins.toString();
 				var s = (secs < 10) ? "0" + secs.toString() : secs.toString();
-				alert(h + ":" + m + ":" + s);
+				alert("#" + h + m + s);
 				document.getElementById('currentTime').innerHTML = h + ":" + m + ":" + s;			
 				document.body.style.backgroundColor = "#" + h + m + s;
 				t = setTimeout(function () {
 					getTime()
 				}, 500);
 			}
-			alert("A");
 			getTime();
 			
 		</script>
