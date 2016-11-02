@@ -5,9 +5,9 @@
 			
 			function getTime() {
 				var today = new Date();
-				hrs = 00;
-				mins = 00;
-				secs = 00;
+				hrs = today.getHours();
+				mins = today.getMinutes();
+				secs = today.getSeconds();
 				
 				hrs = (hrs < 10) ? "0" + hrs : hrs; 
 				mins = (mins < 10) ? "0" + mins : mins;
