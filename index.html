@@ -14,7 +14,11 @@
 				sec = (secs < 10) ? "0" + secs : secs;
 				document.getElementById('currentTime').innerHTML = hrs + ":" + mins + ":" + secs;			
 				document.body.style.backgroundColor = "#" + hrs + mins + secs;
+				t = setTimeout(function() {
+					getTime()
+				}, 500);
 			}
+			getTime();
 			
 		</script>
 		<style>
