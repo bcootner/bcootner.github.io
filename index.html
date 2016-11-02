@@ -2,8 +2,8 @@
 <html>
 	<body>
 		<script>
-			
 			function getTime() {
+				alert("B");
 				var today = new Date();
 				var hrs = today.getHours();
 				var mins = today.getMinutes();
@@ -15,11 +15,11 @@
 				
 				document.getElementById('currentTime').innerHTML = hrs + ":" + mins + ":" + secs;			
 				document.body.style.backgroundColor = "#" + hrs + mins + secs;
-				alert(hrs + ":" + mins + ":" + secs);
 				t = setTimeout(function () {
 					getTime()
 				}, 500);
 			}
+			alert("A");
 			getTime();
 			
 		</script>
