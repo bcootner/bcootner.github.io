@@ -11,7 +11,7 @@
 				var h = (hrs < 10) ? "0" + hrs.toString() : hrs.toString(); 
 				var m = (mins < 10) ? "0" + mins.toString() : mins.toString();
 				var s = (secs < 10) ? "0" + secs.toString() : secs.toString();
-				alert("#" + h + m + s);			
+				document.getElementById("currentTime").innerHTML = "WHATEVER YOU WANT...";
 				document.body.style.backgroundColor = "#" + h + m + s;
 				setTimeout(getTime, 500);
 			}
@@ -31,7 +31,7 @@
   
 		<h2>Contact</h2>
 		
-		<div id = "currentTime"></div>
+		<div id = "currentTime">00:00:00</div>
 			
    	</body>
 </html>
