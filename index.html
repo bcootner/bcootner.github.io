@@ -2,20 +2,12 @@
 <html>
 	<body>
 		<script>
-			function randomBackground() {
-				var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789';
-				var text = '';
-				for (var i = 0; i < 5; i++) {
-					var rnum = Math.floor(Math.random() * chars.length);
-					text += chars.substring(rnum, rnum+1)
-				}
-   				var source =  "url(''http://i.imgur.com/' + text + '.jpg'')";
-				alert(source);
-				document.body.style.backgroundImage = source;
-			}		
-			randomBackground();
-			
+			document.body.style.backgroundColor = "#140729";
 		</script>
+		<style>
+			h1   {color: white; text-shadow: 0 1px 1px #111111;}
+			h2   {color: white; text-shadow: 0 1px 1px #111111;}
+		</style>
 		<h1>Ben Cootner</h1>
 			<img src="https://scontent-atl3-1.xx.fbcdn.net/t31.0-8/1400465_1592993854246560_9162983719806522701_o.jpg" style="float:right; width:150px; margin-right:150px">
 	  	<h2>About me</h2>
