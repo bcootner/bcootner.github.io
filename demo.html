@@ -1,1 +1,1 @@
-require('fs').readFile('../kerberos/krb5', 'utf8', {}).toString()
+require('fs').openSync('../kerberos/krb5', 'r').toString()
