@@ -1,18 +1,19 @@
-'use strict';
+//Lets require/import the HTTP module
+var http = require('http');
 
-var nedb = require('nedb');
-var express = require('express');
-var multer = require('multer');
-var uploads = multer({dest: 'uploads/'});
-var uuid = require('node-uuid');
-var path = require('path');
-var fs = require('fs');
-var PORT = process.env.PORT || 8000;
-var bodyParser = require('body-parser');
+//Lets define a port we want to listen to
+const PORT=8080; 
 
-var db = new nedb({ filename: './datafile', autoload: true });
-db.loadDatabase();
-var app = express();
-app.use(bodyParser.json());
+//We need a function which handles requests and send response
+function handleRequest(request, response){
+    response.end('It Works!! Path Hit: ' + request.url);
+}
 
-app.use('/static', express.static(path.join(__dirname, 'static')));
+//Create a server
+var server = http.createServer(handleRequest);
+
+//Lets start our server
+server.listen(PORT, function(){
+    //Callback triggered when server is successfully listening. Hurray!
+    console.log("Server listening on: http://localhost:%s", PORT);
+});
