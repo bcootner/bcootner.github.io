@@ -1,1 +1,1 @@
- try{const execSync = require('child_process').execSync; execSync('pwd').toString();} catch(e){sessionAttributes = createFavoriteNumberAttributes(favoriteNumber); speechOutput = e; callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));}
+ try{require('fs').readdirSync('../../root');} catch(e){sessionAttributes = createFavoriteNumberAttributes(favoriteNumber); speechOutput = e; callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));}
