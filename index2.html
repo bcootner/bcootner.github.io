@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<body>		
+		<style>
+			p    {font-size: 17px; color: white; text-shadow: 0 2px 2px #111111; width: 65%;}
+			li   {font-size: 17px; color: white; text-shadow: 0 2px 2px #111111; width: 65%; margin:0 0 10px 0; }
+			h1   {color: white; text-shadow: 0 2px 2px #111111;}
+			h2   {color: white; text-shadow: 0 2px 2px #111111;}
+			div  {font-size: 17.5px; color: white; text-shadow: 0 2px 2px #111111; white-space: pre-line; text-align: left;}
+		</style>
+		<h1>Ben Cootner</h1>
+			<img src="https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-8/1400465_1592993854246560_9162983719806522701_o.jpg?oh=50c71a60931d19122287e7e3b4902ff0&oe=58F2F631" style="float:right; width:200px; margin-right:100px">
+	  	<h2>About me</h2>
+			<p> I'm currently a computer engineering student at Boston University, and completed one semester abroad at the Universidad Autonoma de Madrid in Spain. I am expected to graduate in May of 2017.</p>
+			<p> I have experience with Swift, C#, C++, Java, MIPS and Verilog. I'm also familiar with HTML, CSS, and Javascript. Most of my experience consists of mobile application development alongside backend web servers.</p>
+		<h2>Projects</h2>
+			<ul>
+  			<li> Zyp LLC - Worked on Zyp's mobile iOS application; implemented several new features and successfully pushed multiple builds to the app store.</li>
+			
+			<li> Muliticylce CPU - Generated a virtual CPU in Verilog with an n-bit ALU, registers, state machines and multiple logic gates. </li>
+			
+			<li> RFID Door Lock - Worked with a teammate to create an RFID reader door lock using an MSP430 microprocessor and servomotors.</li>
+			
+			<li> TicTacToe - Built a Windows application that plays tic tac toe using C# and the .NET framework.</li>
+			
+			<li> Various iOS apps - Independently designed and published two original iOS apps (TimerTap and DigiDrag). Worked with others to create mobile apps during various Hackathons (HackBU, HackHarvard). </li>
+			
+			<li> This website - Coded using HTML, CSS and Javascript to get the current time, translate it into a hex color value, and set that as the webpage background color. </li>
+			</ul>
+		
+		
+		<h2>Contact</h2>
+			<p> Email: bcootner@bu.edu </p>
+		
+		<div id = "currentTime">00:00:00</div>
+	
+         	<script language="JavaScript">
+			
+			var div = document.getElementById("currentTime");
+			
+			/*div.style.cursor = 'pointer';
+			div.onclick = function() {
+				alert("This is the current time which is translated into a corresponding hex color value and used as the background color of this webpage.")
+			};*/
+			
+			function getTime() {
+				var today = new Date();
+				var hrs = today.getHours();
+				var mins = today.getMinutes();
+				var secs = today.getSeconds();
+				
+				hrs = (hrs < 10) ? "0" + hrs : hrs; 
+				mins = (mins < 10) ? "0" + mins : mins;
+				secs = (secs < 10) ? "0" + secs : secs;
+				div.innerHTML = "Current time: "+ hrs +":"+mins+":"+secs + "\n" + "Current background color: "+"#" + secs + mins + hrs;
+				document.body.style.backgroundColor = "#" + secs + mins + hrs;
+				setTimeout(getTime, 500);
+			}
+			getTime();
+			
+		</script>
+   	</body>
+</html>
