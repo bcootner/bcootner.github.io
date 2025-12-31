@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stranger Things NYE Hunt</title>
+<style>
+  body {
+    font-family: "Palatino Linotype", Palatino, Garamond, Georgia, serif;
+    background: black;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .puzzle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 10px; /* spaced out letters to show blanks */
+    background: black;
+    color: red;
+    border-bottom: 2px solid red;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid red;
+    background: black;
+    color: red;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background: red;
+    color: black;
+  }
+
+  .blanks {
+    font-size: 24px;
+    letter-spacing: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Stranger Things NYE Hunt</h1>
+
+<div class="puzzle">
+  <div class="blanks" id="blank1">_ _ _</div>
+  <input type="text" id="word1" maxlength="3" placeholder="KEY 1 (RainbowRoom)">
+
+  <div class="blanks" id="blank2">_ _ _ _</div>
+  <input type="text" id="word2" maxlength="4" placeholder="KEY 2 (CastleBuyers)">
+
+  <div class="blanks" id="blank3">_ _ _ _ _</div>
+  <input type="text" id="word3" maxlength="5" placeholder="KEY 3 (BuyersHouse)">
+
+  <div class="blanks" id="blank4">_ _ _ _ _ _</div>
+  <input type="text" id="word4" maxlength="6" placeholder="KEY 4 (UpsideDown)">
+
+  <button onclick="checkAnswers()">Submit</button>
+</div>
+
+<script>
+  const encryptedAnswers = ["DLU","HFKR","UDGLR","VLJQDO"];
+
+  function decrypt(cipher) {
+    return cipher.split('').map(c => {
+      let code = c.charCodeAt(0);
+      if(code >= 65 && code <= 90){
+        return String.fromCharCode(((code - 65 - 3 + 26) % 26) + 65);
+      }
+      return c;
+    }).join('');
+  }
+
+  const answers = encryptedAnswers.map(decrypt);
+
+  function checkAnswers() {
+    const inputs = [
+      document.getElementById('word1').value.toUpperCase().trim(),
+      document.getElementById('word2').value.toUpperCase().trim(),
+      document.getElementById('word3').value.toUpperCase().trim(),
+      document.getElementById('word4').value.toUpperCase().trim(),
+    ];
+
+    let allCorrect = true;
+    for(let i=0;i<4;i++){
+      if(inputs[i] !== answers[i]){
+        allCorrect = false;
+        break;
+      }
+    }
+
+    if(allCorrect){
+      window.location.href = "stranger-nye-final3923.html";
+    } else {
+      alert("Oops! One or more words are incorrect. Try again.");
+    }
+  }
+</script>
+
+</body>
+</html>
